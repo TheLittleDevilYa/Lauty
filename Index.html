@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi Amor 💖</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+            max-width: 600px;
+            z-index: 2;
+            position: relative;
+        }
+        h1 {
+            font-size: 3em;
+            color: #fff;
+        }
+        p {
+            font-size: 1.5em;
+            color: #fff;
+        }
+        .corazon {
+            font-size: 2em;
+            animation: latido 1s infinite alternate;
+        }
+        @keyframes latido {
+            from { transform: scale(1); }
+            to { transform: scale(1.2); }
+        }
+        button {
+            background: #ff5f6d;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+            color: white;
+        }
+        button:hover {
+            background: #ff3b60;
+        }
+        .corazon-caida {
+            position: absolute;
+            top: -50px;
+            font-size: 2em;
+            animation: caer 4s linear infinite;
+        }
+        @keyframes caer {
+            0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Para Mi Amor 💖</h1>
+        <p>7 meses amor WOW!, mi vida. Sos lo mejor que me pasó en la vida, cada momento que pasabamos JAJAJA con vos es una aventura hermosa. 🌹</p>
+        <p>No hay palabras para explicar cuánto te amo, aparecar de todo lo malo..., pero igual lo voy a intentar todos los días ser una persona mejor. 💕</p>
+        <p class="corazon">💖💖💖</p>
+        <button onclick="mostrarSorpresa()">Clickeame, mi amor 💕</button>
+    </div>
+    <audio id="musica" src="https://www.bensound.com/bensound-music/bensound-love.mp3" loop></audio>
+    <script>
+        function crearCorazones() {
+            const corazon = document.createElement('div');
+            corazon.innerHTML = '💖';
+            corazon.classList.add('corazon-caida');
+            corazon.style.left = Math.random() * 100 + 'vw';
+            document.body.appendChild(corazon);
+            setTimeout(() => corazon.remove(), 4000);
+        }
+        setInterval(crearCorazones, 500);
+
+        function mostrarSorpresa() {
+            let audio = document.getElementById('musica');
+            document.body.innerHTML = `
+                <div class='container'>
+                    <h1>Te Amo, Mi Vida 💖</h1>
+                    <p>Gracias por hacerme tan feliz todos esos días, momentos. Sos mi persona favorita en el mundo. 🌍💕</p>
+                    <p>Espero que sigamos sumando momentos juntos, porque con vos todo es más lindo. ✨</p>
+                    <p>Yo sé que tuve muchos errores y todo eso, pero bueno, yo a vos te amo muchísimo y voy a mejorar todo para poder estar bien con vos y todo. 💕</p>
+                    <p class='corazon'>💖💖💖</p>
+                </div>`;
+            document.body.appendChild(audio);
+            audio.play();
+        }
+    </script>
+</body>
+</html>
